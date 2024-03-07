@@ -1,0 +1,3 @@
+class Congregacao < ApplicationRecord
+    
+end

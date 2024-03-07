@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Defina suas rotas de aplicativo conforme o DSL em https://guides.rubyonrails.org/routing.html
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Revela o status de saúde em /up que retorna 200 se o aplicativo for iniciado sem exceções, caso contrário, 500.
+  # Pode ser usado por balanceadores de carga e monitores de tempo de atividade para verificar se o aplicativo está online.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :congregacoes 
 end
