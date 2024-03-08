@@ -1,4 +1,6 @@
 class CongregacoesController < ApplicationController
+  before_action :set_congregacao, only: [:show, :edit, :update, :destroy]
+
   def index
     @congregacao = Congregacao.all
   end
