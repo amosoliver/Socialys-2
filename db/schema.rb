@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_08_170448) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_121423) do
   create_table "congregacoes", force: :cascade do |t|
     t.string "nome"
     t.datetime "created_at", null: false
@@ -29,6 +29,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_170448) do
     t.index ["congregacao_id"], name: "index_entradas_on_congregacao_id"
   end
 
+  create_table "literaturas", force: :cascade do |t|
+    t.float "valor"
+    t.integer "congregacao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["congregacao_id"], name: "index_literaturas_on_congregacao_id"
+  end
+
   create_table "saidas", force: :cascade do |t|
     t.string "nfc"
     t.date "data"
@@ -39,4 +47,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_08_170448) do
   end
 
   add_foreign_key "entradas", "congregacoes"
+  add_foreign_key "literaturas", "congregacoes"
 end
