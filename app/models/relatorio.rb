@@ -1,6 +1,4 @@
 class Relatorio < ApplicationRecord
-
-    def relatorio
-      
-    end
+  def relatorio
+  end
 end
