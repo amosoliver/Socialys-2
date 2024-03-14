@@ -1,0 +1,75 @@
+<li class="nav-item-header">
+  <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Escolar</div>
+  <i class="ph-dots-three sidebar-resize-show"></i>
+</li>
+<li class="nav-item">
+  <a href="/e_atos_normativos" class="nav-link <%= "active" if params[:controller] == "e_atos_normativos" %>">
+    <i class="ph-scroll"></i>
+    <span>
+      Atos Normativos
+      <!-- <span class="d-block fw-normal opacity-50">Tela inicial</span> -->
+    </span>
+  </a>
+</li>
+<li class="nav-item">
+  <a href="/e_regimentos" class="nav-link <%= "active" if params[:controller] == "e_regimentos" %>">
+    <i class="ph-files"></i>
+    <span>
+      Regimentos
+      <!-- <span class="d-block fw-normal opacity-50">Tela inicial</span> -->
+    </span>
+  </a>
+</li>
+<li class="nav-item">
+  <a href="/e_servicos_educacionais" class="nav-link <%= "active" if params[:controller] == "e_servicos_educacionais" %>">
+    <i class="ph-graduation-cap"></i>
+    <span>
+      Serviços Educacionais
+      <!-- <span class="d-block fw-normal opacity-50">Tela inicial</span> -->
+    </span>
+  </a>
+</li>
+
+<li class="nav-item nav-item-submenu">
+  <% predial = [
+    "e_especificidades",
+    "e_atos_normatizacoes",
+    "e_modalidades",
+    "e_normatizacoes",
+    "e_etapas_path",
+    "e_fases_path"
+  ] %>
+  <a class="nav-link <%= " active" if predial.include?(params[:controller] ) %>">
+    <i class="ph-chalkboard-simple"></i>
+    <span>
+      Gestão Escolar
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+        <%= link_to t("activerecord.models.#{EEspecificidade.model_name.i18n_key}.other"), e_especificidades_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{EEtapa.model_name.i18n_key}.other"), e_etapas_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{EFase.model_name.i18n_key}.other"), e_fases_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{EModalidade.model_name.i18n_key}.other"), e_modalidades_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{EModeloOferta.model_name.i18n_key}.other"), e_modelos_ofertas_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{ENivel.model_name.i18n_key}.other"), e_niveis_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{ENormatizacao.model_name.i18n_key}.other"), e_normatizacoes_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t("activerecord.models.#{ETipoAtoNormativo.model_name.i18n_key}.other"), e_tipos_atos_normativos_path, class: "nav-link" %>
+      </li>
+    </li>
+  </ul>
+</li>

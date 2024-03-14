@@ -1,0 +1,167 @@
+        
+<li class="nav-item-header">
+  <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Referencial</div>
+  <i class="ph-dots-three sidebar-resize-show"></i>
+</li>
+<li class="nav-item nav-item-submenu">
+  <% global = [
+    "g_sistemas",
+    "g_secretarias",
+    "g_instituicoes",
+    "g_cres",
+    "g_dicionarios"
+  ] %>
+  <a class="nav-link <%= "active" if global.include?(params[:controller] ) %>">
+    <i class="ph-globe-hemisphere-west"></i>
+    <span>
+      Global
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GSecretaria.model_name.i18n_key}.other"), g_secretarias_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GSistema.model_name.i18n_key}.other"), g_sistemas_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GCre.model_name.i18n_key}.other"), g_cres_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GDicionario.model_name.i18n_key}.other"), g_dicionarios_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>
+<li class="nav-item nav-item-submenu">
+  <% localizacao = [ 
+    "g_paises",
+    "g_estados",
+    "g_municipios",
+    "g_bairros",
+    "g_distritos",
+    "g_localidades",
+    "g_nacionalidades"
+  ] %>
+  <a class="nav-link <%= "active" if localizacao.include?(params[:controller] ) %>">
+    <i class="ph-map-pin"></i>
+    <span>
+      Localização
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GPais.model_name.i18n_key}.other"), g_paises_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GEstado.model_name.i18n_key}.other"), g_estados_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GMunicipio.model_name.i18n_key}.other"), g_municipios_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GDistrito.model_name.i18n_key}.other"), g_distritos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GBairro.model_name.i18n_key}.other"), g_bairros_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GLocalidade.model_name.i18n_key}.other"), g_localidades_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GNacionalidade.model_name.i18n_key}.other"), g_nacionalidades_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>
+<% escolaridade = ["g_areas", "g_cursos", "g_tipos_niveis_escolaridades" ] %>
+<li class="nav-item nav-item-submenu">
+  <a class="nav-link <%= "active" if escolaridade.include?(params[:controller] ) %>">
+    <i class="ph-books"></i>
+    <span>
+      Escolaridade
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GArea.model_name.i18n_key}.other"), g_areas_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GCurso.model_name.i18n_key}.other"), g_cursos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GTipoNivelEscolaridade.model_name.i18n_key}.other"), g_tipos_niveis_escolaridades_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GInstituicao.model_name.i18n_key}.other"), g_instituicoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GIdioma.model_name.i18n_key}.other"), g_idiomas_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>
+<% treinamento = ["g_tipos_cursos", "g_dimensoes", "g_divisoes", "g_modalidades"] %>
+<li class="nav-item nav-item-submenu">
+  <a class="nav-link <%= "active" if treinamento.include?(params[:controller] ) %>">
+    <i class="ph-chalkboard-teacher"></i>
+    <span>
+      Treinamento
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GTipoCurso.model_name.i18n_key}.other"), g_tipos_cursos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GStatusTreinamento.model_name.i18n_key}.other"), g_status_treinamentos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GModalidade.model_name.i18n_key}.other"), g_modalidades_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GDivisao.model_name.i18n_key}.other"), g_divisoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GDimensao.model_name.i18n_key}.other"), g_dimensoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GInstituicao.model_name.i18n_key}.other"), g_instituicoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GIdioma.model_name.i18n_key}.other"), g_idiomas_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>
+<% complementar = ["g_parentescos", "g_tipos_certidoes_civis", "g_tipos_moradias", "g_deficiencias", "g_racas", "g_categorias_cnh", "g_cartorios"] %>
+<li class="nav-item nav-item-submenu">
+  <a class="nav-link <%= "active" if complementar.include?(params[:controller] ) %>">
+    <i class="ph-circles-three-plus"></i>
+    <span>
+      Complementar
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GCartorio.model_name.i18n_key}.other"), g_cartorios_path, class: "nav-link" %>
+    </li> 
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GCategoriaCnh.model_name.i18n_key}.other"), g_categorias_cnh_path, class: "nav-link" %>
+    </li> 
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GDeficiencia.model_name.i18n_key}.other"), g_deficiencias_path, class: "nav-link" %>
+    </li> 
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GEstadoCivil.model_name.i18n_key}.other"), g_estados_civis_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GParentesco.model_name.i18n_key}.other"), g_parentescos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GRaca.model_name.i18n_key}.other"), g_racas_path, class: "nav-link" %>
+    </li>    
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GTipoCertidaoCivil.model_name.i18n_key}.other"), g_tipos_certidoes_civis_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GTipoMoradia.model_name.i18n_key}.other"), g_tipos_moradias_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>

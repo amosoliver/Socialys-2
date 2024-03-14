@@ -1,0 +1,225 @@
+<li class="nav-item-header">
+  <div class="text-uppercase fs-sm lh-sm opacity-50 sidebar-resize-hide">Infraestrutura</div>
+  <i class="ph-dots-three sidebar-resize-show"></i>
+</li>
+<li class="nav-item">
+  <%= link_to i_predios_path, class: "nav-link #{" active" if params[:controller] == "i_predios" }" do %>
+    <i class="ph-buildings"></i>
+    <%=  t("activerecord.models.#{IPredio.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to i_extensoes_path, class: "nav-link #{" active" if params[:controller] == "i_extensoes" }" do %>
+    <i class="ph-house-line"></i>
+    <%=  t("activerecord.models.#{IExtensao.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to i_correcoes_monetarias_path, class: "nav-link #{" active" if params[:controller] == "i_correcoes_monetarias" }" do %>
+    <i class="ph-calculator"></i>
+    <%=  t("activerecord.models.#{ICorrecaoMonetaria.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to i_checklists_path, class: "nav-link #{" active" if params[:controller] == "i_checklists" }" do %>
+    <i class="ph-check-square"></i>
+    <%=  t("activerecord.models.#{IChecklist.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<!-- <li class="nav-item">
+  <a href="/i_equipamentos" class="nav-link <%= "active" if params[:controller] == "i_equipamentos" %>">
+    <i class="ph-laptop"></i>
+    <span>
+      Equipamentos
+      <span class="d-block fw-normal opacity-50">Tela inicial</span>
+    </span>
+  </a>
+</li>-->
+<li class="nav-item">
+  <%= link_to i_inspecoes_path, class: "nav-link #{" active" if params[:controller] == "i_inspecoes" }" do %>
+    <i class="ph-magnifying-glass"></i>
+    <%=  t("activerecord.models.#{IInspecao.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to i_medicoes_path, class: "nav-link #{" active" if params[:controller] == "i_medicoes" }" do %>
+    <i class="ph-coins"></i>
+    <%=  t("activerecord.models.#{IMedicao.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to i_memoriais_descritivos_terreno_path, class: "nav-link #{" active" if params[:controller] == "i_memoriais_descritivos_terreno" }" do %>
+    <i class="ph-ruler"></i>
+    <%=  t("activerecord.models.#{IMemorialDescritivoTerreno.model_name.i18n_key}.other") %>
+  <% end %>
+</li>
+<li class="nav-item nav-item-submenu">
+  <% acordos = [
+    "i_categorias_acordos",
+    "i_itens_acordos",
+    "i_notificacoes",
+    "i_patrocinadores",
+    "i_status_acordos",
+    "i_tipos_itens_acordos",
+    "i_acordos",
+    "i_contratados",
+    "i_inspecoes",
+    "i_portarias",
+    "i_status_notificacoes",
+    "i_niveis_acordo",
+    "i_tipos_acordo",
+    "i_tipos_fornecimentos_execucao",
+    "i_familias_servicos_acordos",
+    "i_servicos_acordos",
+    "i_valores_empenhados"
+  ] %>
+  <a class="nav-link <%= " active" if acordos.include?(params[:controller] ) %>">
+    <i class="ph-handshake"></i>
+    <span>
+      Acordos
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ICategoriaAcordo.model_name.i18n_key}.other"), i_categorias_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IContratado.model_name.i18n_key}.other"), i_contratados_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IAcordo.model_name.i18n_key}.other"), i_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IFamiliaServicoAcordo.model_name.i18n_key}.other"), i_familias_sevicos_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IFiscal.model_name.i18n_key}.other"), i_fiscais_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IItemAcordo.model_name.i18n_key}.other"), i_itens_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{INivelAcordo.model_name.i18n_key}.other"), i_niveis_acordo_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{INotificacao.model_name.i18n_key}.other"), i_notificacoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPatrocinador.model_name.i18n_key}.other"), i_patrocinadores_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPortaria.model_name.i18n_key}.other"), i_portarias_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IServicoAcordo.model_name.i18n_key}.other"), i_servicos_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IStatusAcordo.model_name.i18n_key}.other"), i_status_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IStatusNotificacao.model_name.i18n_key}.other"), i_status_notificacoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoAcordo.model_name.i18n_key}.other"), i_tipos_acordo_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoFornecimentoExecucao.model_name.i18n_key}.other"), i_tipos_fornecimentos_execucao_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoItemAcordo.model_name.i18n_key}.other"), i_tipos_itens_acordos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IValorEmpenhadoAcordo.model_name.i18n_key}.other"), i_valores_empenhados_acordos_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>
+<li class="nav-item nav-item-submenu">
+  <% predial = [
+    "i_ambientes_prediais",
+    "i_tipos_ambientes_prediais",
+    "i_tipologias_escolas",
+    "i_tipos_predios",
+    "i_tipos_equipamentos",
+    "i_predios_tratamentos_lixo",
+    "i_predios_esgotos_sanitario",
+    "i_predios_tipos_abastecimento",
+    "i_predios_tipos_energia_eletrica",
+    "i_andares",
+    "i_predios_tipos_localizacoes_diferenciadas",
+    "i_predios_mantenedores_proprietarios",
+    "i_predios_naturezas_ocupacao",
+    "i_contas_contabeis",
+    "i_predios_situacoes",
+    "i_conformidades",
+    "i_tipos_inspecao",
+    "g_tipologias_cre"
+  ] %>
+  <a class="nav-link <%= " active" if predial.include?(params[:controller] ) %>">
+    <i class="ph-bounding-box"></i>
+    <span>
+      Gestão Predial
+    </span>
+  </a>
+  <ul class="nav-group-sub collapse">
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IAndar.model_name.i18n_key}.other"), i_andares_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IConformidade.model_name.i18n_key}.other"), i_conformidades_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IContaContabil.model_name.i18n_key}.other"), i_contas_contabeis_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ICorrecaoMonetaria.model_name.i18n_key}.other"), i_correcoes_monetarias_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioEsgotoSanitario.model_name.i18n_key}.other"), i_predios_esgotos_sanitario_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioLocalizacao.model_name.i18n_key}.other"), i_predios_localizacoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioMantenedorProprietario.model_name.i18n_key}.other"), i_predios_mantenedores_proprietarios_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioNaturezaOcupacao.model_name.i18n_key}.other"), i_predios_naturezas_ocupacao_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredio.model_name.i18n_key}.other"), i_predios_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioSituacao.model_name.i18n_key}.other"), i_predios_situacoes_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{GTipologiaCre.model_name.i18n_key}.other"), g_tipologias_cres_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipologiaEscola.model_name.i18n_key}.other"), i_tipologias_escolas_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioTipoAbastecimento.model_name.i18n_key}.other"), i_predios_tipos_abastecimento_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoAmbientePredial.model_name.i18n_key}.other"), i_tipos_ambientes_prediais_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioTipoEnergiaEletrica.model_name.i18n_key}.other"), i_predios_tipos_energia_eletrica_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoEquipamento.model_name.i18n_key}.other"), i_tipos_equipamentos_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoInspecao.model_name.i18n_key}.other"), i_tipos_inspecao_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioTipoLocalizacaoDiferenciada.model_name.i18n_key}.other"), i_predios_tipos_localizacoes_diferenciadas_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{ITipoPredio.model_name.i18n_key}.other"), i_tipos_predios_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t("activerecord.models.#{IPredioTratamentoLixo.model_name.i18n_key}.other"), i_predios_tratamentos_lixo_path, class: "nav-link" %>
+    </li>
+  </ul>
+</li>
