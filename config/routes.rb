@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :congregacoes 
   resources :saidas
   resources :entradas
+  resources :literaturas
   root 'home#index'
 end

@@ -1,3 +1,7 @@
-<%@congregacao.each do |cong| %>
-  <%= cong.nome%>
+<% @entrada.each do |ent| %>
+  <%= ent.numero_recibo %>
+  <%= ent.descricao  %>
+  <%= ent.nome %>
+  <%= ent.data %>
+  <%= ent.valor%>
 <%end%>

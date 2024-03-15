@@ -13,7 +13,7 @@ class EntradasController < ApplicationController
     if @entrada.save
       redirect_to @entrada, notice: "Entrada criada com sucesso"
     else
-      redirect_to :new
+      redirect_to new_entrada_path
     end
   end
 
@@ -32,10 +32,17 @@ class EntradasController < ApplicationController
     end
   end
 
-  private
-  def set_entrada
-    @entrada.find(params[:id])
+  def destroy
+    @entrada = Entrada.destroy
+    redirect_to :index, notice: "Entrada excluida com sucesso"
   end
+  
+
+  private
+def set_entrada
+  @entrada = Entrada.find(params[:id])
+end
+
   def entrada_params
     params.require(:entrada).permit(:numero_recibo,:data,:nome,:descricao,:congregacao_id)
   end

@@ -1,5 +1,6 @@
-<%= simple_form_for (@saida) do |f| %>
+<%= simple_form_for (@entrada) do |f| %>
   <%= f.input :numero_recibo %>
+    <%= f.input :congregacao_id, collection: Congregacao.all.map { |c| [c.nome, c.id] }, include_blank: true %>  
   <%= f.input :data  %>
   <%= f.input :descricao %>
   <%= f.input :nome  %>
